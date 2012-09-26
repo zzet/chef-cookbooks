@@ -31,7 +31,7 @@ default['gitlab']['gitlab_branch'] = "master"
 case node['platform']
 when "ubuntu","debian"
   default['gitlab']['packages'] = %w{
-    ruby1.9.3 ruby1.9.3-dev ri1.9.3 libruby1.9.3
+    ruby1.9.1 ruby1.9.1-dev ri1.9.1 libruby1.9.1
     curl wget checkinstall libxslt-dev libsqlite3-dev
     libcurl4-openssl-dev libssl-dev libmysql++-dev
     libicu-dev libc6-dev libyaml-dev nginx python python-dev
@@ -53,7 +53,7 @@ when "redhat","centos","amazon","scientific"
   end
 else
   default['gitlab']['packages'] = %w{
-    ruby1.9.3 ruby1.9.3-dev ri1.9.3 libruby1.9.3
+    ruby1.9.1 ruby1.9.1-dev ri1.9.1 libruby1.9.1
     curl wget checkinstall libxslt-dev libsqlite3-dev
     libcurl4-openssl-dev libssl-dev libmysql++-dev
     libicu-dev libc6-dev libyaml-dev nginx python
@@ -66,7 +66,7 @@ default['gitlab']['trust_local_sshkeys'] = "yes"
 # Problems deploying this on RedHat provided rubies. 
 case node['platform']
 when "redhat","centos","scientific","amazon"
-  default['gitlab']['install_ruby'] = "1.9.3-p194"
+  default['gitlab']['install_ruby'] = "1.9.2-p290"
 else
   default['gitlab']['install_ruby'] = "package"
 end
